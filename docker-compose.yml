@@ -1,0 +1,11 @@
+services:
+  uploader:
+    container_name: uploader
+    build:
+      context: .
+    environment:
+      STORAGE_ENDPOINT_URL: ${STORAGE_ENDPOINT_URL}
+      STORAGE_ACCESS_KEY: ${STORAGE_ACCESS_KEY}
+      STORAGE_SECRET_KEY: ${STORAGE_SECRET_KEY}
+      STORAGE_BUCKET_NAME: ${STORAGE_BUCKET_NAME}
+      TELEGRAM_BOT_KEY: ${TELEGRAM_BOT_KEY}
