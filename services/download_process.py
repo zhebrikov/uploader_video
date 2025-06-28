@@ -1,5 +1,6 @@
 import os
 
+from api import add_video
 from download import download
 from s3client import S3Client
 
@@ -20,3 +21,6 @@ async def download_process(link, update):
     os.remove('./{path}'.format(path=result['name']))
 
     await update.message.reply_text(f'Скачивание файла {link} Успешно закончено')
+
+    await add_video(result['title'], result['name'] )
+
